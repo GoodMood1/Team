@@ -1,0 +1,132 @@
+<div class="page-content container-fluid">
+  <div class="crms-title row bg-white">
+    <div class="col  p-0">
+      <h3 class="page-title m-0">
+<span class="page-title-icon bg-gradient-primary text-white mr-2">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">-->
+  <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>-->
+  </svg>
+  </span>Email</h3>
+      </div>
+      <div class="col p-0 text-right">
+        <ul class="breadcrumb bg-white float-right m-0 pl-0 pr-0">
+          <li class="breadcrumb-item liexp"><a href="/main/dashboard">Dashboard</a></li>
+          <li class="breadcrumb-item active">Email</li>
+        </ul>
+      </div>
+    </div>
+    <div class="page-header">
+      <h2 class="ssinb">Inbox</h2>
+      <button class="bCompose">&#10010; Compose</button>
+    </div>
+    <div class="pt-3 mb-0" style="width: 100%">
+      <div class="row bg-white">
+
+        <div class="col-md-12">
+          <div class="row">
+            <div class="ssinb posDiv col">
+              <button mat-stroked-button [matMenuTriggerFor]="menu">Select<mat-icon>keyboard_arrow_down</mat-icon> </button>
+              <mat-menu #menu="matMenu">
+                <ul>
+                  <li><a href="/main/mail">All</a></li>
+                  <li><a href="/main/mail">None</a></li>
+                  <li><mat-divider></mat-divider></li>
+                  <li><a href="/main/mail">Read</a></li>
+                  <li><a href="/main/mail">Unread</a></li>
+                </ul>
+              </mat-menu>
+              <button mat-stroked-button [matMenuTriggerFor]="menu2">Actions<mat-icon>keyboard_arrow_down</mat-icon> </button>
+              <mat-menu #menu2="matMenu">
+                <ul>
+                  <li><a href="/main/mail">Reply</a></li>
+                  <li><a href="/main/mail">Forward</a></li>
+                  <li><a href="/main/mail">Archive</a></li>
+                  <li><mat-divider></mat-divider></li>
+                  <li><a href="/main/mail">Mark As Read</a></li>
+                  <li><a href="/main/mail">Mark As Unread</a></li>
+                  <li><mat-divider></mat-divider></li>
+                  <li><a href="/main/mail">Delete</a></li>
+                </ul>
+              </mat-menu>
+              <button mat-stroked-button [matMenuTriggerFor]="menu3"><mat-icon>folder</mat-icon><mat-icon>keyboard_arrow_down</mat-icon> </button>
+              <mat-menu #menu3="matMenu">
+                <ul>
+                  <li><a href="/main/mail">Social</a></li>
+                  <li><a href="/main/mail">Forums</a></li>
+                  <li><a href="/main/mail">Updates</a></li>
+                  <li><mat-divider></mat-divider></li>
+                  <li><a href="/main/mail">Spam</a></li>
+                  <li><a href="/main/mail">Trash</a></li>
+                  <li><mat-divider></mat-divider></li>
+                  <li><a href="/main/mail">New</a></li>
+                </ul>
+              </mat-menu>
+              <button mat-stroked-button [matMenuTriggerFor]="menu4"><mat-icon>loyalty</mat-icon><mat-icon>keyboard_arrow_down</mat-icon></button>
+              <mat-menu #menu4="matMenu">
+                <ul>
+                  <li><a href="/main/mail">Work</a></li>
+                  <li><a href="/main/mail">Family</a></li>
+                  <li><a href="/main/mail">Social</a></li>
+                  <li><mat-divider></mat-divider></li>
+                  <li><a href="/main/mail">Primary</a></li>
+                  <li><a href="/main/mail">Promotions</a></li>
+                  <li><a href="/main/mail">Forums</a></li>
+                </ul>
+              </mat-menu>
+              <button mat-stroked-button>
+              <input type="search" id="searchInp" placeholder="Send Messages"/>
+              </button>
+            </div>
+            <div class="ssinb2">
+              <button mat-stroked-button type="button" class="btn btn-outline-secondary"><mat-icon>autorenew</mat-icon></button>
+              <button mat-stroked-button type="button" class="btn btn-outline-secondary"><</button>
+              <button mat-stroked-button type="button" class="btn btn-outline-secondary">></button>
+              <p align="right">Showing 10 of 112 </p>
+            </div>
+            </div>
+          <table mat-table [dataSource]="dataSource">
+
+            <!-- Name Column -->
+          <ng-container matColumnDef="check">
+            <th mat-header-cell *matHeaderCellDef ></th>
+            <td mat-cell *matCellDef="let element"> <mat-checkbox></mat-checkbox> </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="icon">
+            <th mat-header-cell *matHeaderCellDef>  </th>
+            <td mat-cell *matCellDef="let element">  <mat-icon>{{element.icon}}</mat-icon>  </td>
+          </ng-container>
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="purchase">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">   {{element.purchase}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="descr">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">{{element.descr}} </td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="clip">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">  <mat-icon>{{element.clip}}</mat-icon> </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="daterespond">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">  {{element.daterespond}}  </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>

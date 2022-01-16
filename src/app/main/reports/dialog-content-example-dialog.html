@@ -1,0 +1,56 @@
+<h2 mat-dialog-title><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-data" viewBox="0 0 16 16">
+  <path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z"/>
+  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+  <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+</svg>Add New Report</h2>
+<mat-divider></mat-divider>
+<mat-dialog-actions >
+      <button class="bCompose2" style="background: linear-gradient(to right, #da8cff, #9a55ff);color: white;" mat-button [mat-dialog-close]="true" cdkFocusInitial>Create</button>
+  <button type="button" class="btn btn-secondary" mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
+<mat-dialog-content class="mat-typography">
+  <br>
+<h3>Choose a Report Type</h3>
+  <mat-form-field appearance="fill">
+    <mat-label>Task Report</mat-label>
+    <mat-select disableRipple>
+      <mat-option value="1">Task Report</mat-option>
+      <mat-option value="2">Contact Report</mat-option>
+      <mat-option value="3">Company Report</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <h2>Report Preview</h2>
+  <table matSort class="table table-striped" matSort>
+    <ng-container>
+        <thead>
+        <tr>
+          <th mat-sort-header scope="col">Report Name</th>
+          <th mat-sort-header scope="col">Date Created</th>
+          <th mat-sort-header scope="col">Scheduled</th>
+          <th mat-sort-header scope="col">Created By</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Mark</td>
+          <td>07, Aug 2020</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <td>Jacob</td>
+          <td>07, Aug 2020</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <td>Larry</td>
+          <td>07, Aug 2020</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+        </tbody>
+    </ng-container>
+  </table>
+</mat-dialog-content>
+

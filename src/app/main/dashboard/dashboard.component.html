@@ -1,0 +1,132 @@
+<div class="page-content container-fluid">
+  <div class="crms-title row bg-white">
+    <div class="col p-0">
+      <h3 class="page-title m-0">
+        <mat-icon style="color: blueviolet">subtitles</mat-icon>
+        <span> Dashboard</span>
+      </h3>
+    </div>
+    <div class="col p-0 text-right">
+      <ul class="breadcrumb bg-white float-right m-0 pl-0 pr-0">
+        <li class="breadcrumb-item"><a href="main/dashboard" style="color: blue">Dashboard</a></li>
+        <li class="breadcrumb-item" style="color: gray">Dashboard</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row graphs">
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div #containerRef class="card-body">
+          <h1>Sales Overview</h1>
+          <ngx-charts-bar-vertical
+            [view]="[containerRef.offsetHeight - 150, containerRef.offsetWidth]"
+            [results]="single"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="showLegend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel">
+          </ngx-charts-bar-vertical>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div #containerRef class="card-body">
+          <h1>Total Sales</h1>
+          <ngx-charts-area-chart
+            [view]="[containerRef.offsetHeight - 150, containerRef.offsetWidth]"
+            [legend]="showLegend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            [timeline]="timeline"
+            [results]="multi">
+          </ngx-charts-area-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row graphs">
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div #containerRef class="card-body">
+          <h1>Yearly Projects</h1>
+          <ngx-charts-pie-chart
+            [view]="[containerRef.offsetHeight - 150, containerRef.offsetWidth]"
+            [results]="project"
+            [legend]="showLegend"
+            [labels]="showLabels"
+            [doughnut]="doughnut"
+            [gradient]="gradient">
+          </ngx-charts-pie-chart>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div #containerRef class="card-body">
+          <h1>Total Revenue</h1>
+          <ngx-charts-bar-horizontal-2d
+            [view]="[containerRef.offsetHeight - 150, containerRef.offsetWidth]"
+            [results]="projectMulti"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="showLegend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xProjectAxisLabel"
+            [yAxisLabel]="yProjectAxisLabel"
+          >
+          </ngx-charts-bar-horizontal-2d>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row graphs">
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div #containerRef class="card-body">
+          <h1>Lead</h1>
+          <ngx-charts-pie-chart
+            [view]="[containerRef.offsetHeight - 150, containerRef.offsetWidth]"
+            [results]="singleLead"
+            [gradient]="gradient"
+            [legend]="showLegend"
+            [doughnut]="isDoughnut"
+          >
+          </ngx-charts-pie-chart>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card h-100">
+        <div #containerRef class="card-body">
+          <h1>Products Yearly Sales</h1>
+          <ngx-charts-line-chart
+            [view]="[containerRef.offsetHeight - 150, containerRef.offsetWidth]"
+            [legend]="showLegend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            [timeline]="timeline"
+            [results]="multiLead"
+          >
+          </ngx-charts-line-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

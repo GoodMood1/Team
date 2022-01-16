@@ -1,0 +1,84 @@
+.page-content {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.page-header {
+  width: 100%;
+}
+
+.list-inline-item {
+  display: inline-block;
+}
+
+.btn-gradient-primary {
+  background: linear-gradient(to right, #da8cff, #9a55ff);
+  font-size: 14px;
+  padding: 10px 30px;
+  color: #fff;
+  border: 0;
+  border-radius: 50px;
+}
+
+.badge-gradient {
+  background: -webkit-gradient(linear, left top, right top, from(#84d9d2), to(#07cdae)) !important;
+  background: linear-gradient(to right, #84d9d2, #07cdae);
+  color: #ffffff;
+}
+
+table span {
+  padding: 5px;
+}
+
+table {
+  width: 100%;
+}
+
+table > td {
+  padding: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding: 2px;
+  margin-right: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  vertical-align: middle;
+  border-style: none;
+}
+
+.crms-title {
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+}
+
+.page-title {
+  color: #1f1f1f;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.crms-title .breadcrumb {
+  padding-top: 5px;
+}
+
+.breadcrumb-item {
+  font-size: 18px;
+  font-weight: 500;
+}

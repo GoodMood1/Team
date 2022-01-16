@@ -1,0 +1,38 @@
+<div class="page-content container-fluid">
+  <div class="crms-title row bg-white">
+    <div class="col p-0">
+      <h3 class="page-title m-0">
+        <mat-icon style="color: blueviolet">subtitles</mat-icon>
+        <span> FAQ</span>
+      </h3>
+    </div>
+    <div class="col p-0 text-right">
+      <ul class="breadcrumb bg-white float-right m-0 pl-0 pr-0">
+        <li class="breadcrumb-item"><a href="main/dashboard" style="color: blue">Dashboard</a></li>
+        <li class="breadcrumb-item" style="color: gray">FAQ</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-header pt-3 mb-0">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="mainWrapper">
+          <mat-accordion>
+            <mat-expansion-panel *ngFor="let quest of questionList">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon>maximize</mat-icon>
+                </mat-panel-title>
+                <mat-panel-description>
+                  <a>{{quest.title}}</a>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <hr>
+              <p>{{quest.content}}</p>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

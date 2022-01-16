@@ -1,0 +1,302 @@
+<div class="wrapper">
+  <div class="header">
+    <div class="header-left">
+      <a href="/main/dashboard" class="logo">
+        <img src="assets/logo.png" alt="" class="sidebar-logo">
+      </a>
+    </div>
+    <ul class="nav user-menu">
+      <li class="nav-item">
+        <button mat-button [matMenuTriggerFor]="languages">Language
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <mat-menu #languages="matMenu">
+          <button mat-menu-item><img style="width: 30px; height: 30px; border-radius: 100%;"
+                                     src="./assets/language/english.png" alt="">English
+          </button>
+          <button mat-menu-item><img style="width: 30px; height: 30px; border-radius: 100%;"
+                                     src="./assets/language/russian.png" alt="">Russian
+          </button>
+          <button mat-menu-item><img style="width: 30px; height: 30px; border-radius: 100%;"
+                                     src="./assets/language/ukraine.jpg" alt="">Ukrainian
+          </button>
+          <button mat-menu-item><img style="width: 30px; height: 30px; border-radius: 100%;"
+                                     src="./assets/language/german.png" alt="">German
+          </button>
+        </mat-menu>
+      </li>
+      <li class="nav-item">
+        <button mat-button>Notifications</button>
+      </li>
+      <li class="nav-item">
+        <button mat-button>Messages</button>
+      </li>
+      <li class="nav-item">
+        <button mat-button [matMenuTriggerFor]="profile"><img src="./assets/images/avatar.jpeg" alt="">Admin
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <mat-menu #profile="matMenu">
+          <button mat-menu-item>My Profile</button>
+          <button mat-menu-item>Settings</button>
+          <button mat-menu-item (click)="logOut()">Log Out</button>
+        </mat-menu>
+      </li>
+    </ul>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <form action="/main" class="mobile-view">
+      <input type="text" class="form-control" placeholder="Search here">
+      <button class="btn" type="button">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
+    <div id="sidebar-menu" class="sidebar-menu">
+      <ul>
+        <li class="nav-item nav-profile">
+
+          <a href="/main" class="nav-link">
+            <div class="nav-profile-image">
+              <img src="./assets/images/avatar.jpeg" alt="avatar"/>
+            </div>
+            <div style="display: inline-block">
+              <div class="nav-profile-text d-flex flex-column">
+                <span class="font-weight-bold mb2">David Grey .H</span>
+                <span class="text-white text-small">Project Manager</span>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="menu-title"><span>Main</span></li>
+        <li>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header class="active sideItem" (click)="AddActive(0)">
+              <mat-panel-title>
+                <mat-icon>home</mat-icon>
+                <span>Dashboard</span>
+                <mat-icon class="arrow" style="{{trans[0]}}">keyboard_arrow_right</mat-icon>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul>
+              <li class="sideItem" style="width: 100%">
+                <a href="/main/dashboard" class="active ">Deals Dashboard</a>
+              </li>
+              <li class="sideItem">
+                <a href="/main/dashboard"> <span>Project Dashboard</span></a>
+              </li>
+              <li class="sideItem">
+                <a href="/main/dashboard"><span>Leads Dashboard</span></a>
+              </li>
+            </ul>
+          </mat-expansion-panel>
+        </li>
+
+        <li class="sideItem">
+          <a href="/main/tasks">
+            <mat-icon>playlist_add_check</mat-icon>
+            <span>Tasks</span>
+          </a>
+        </li>
+        <li class="sideItem">
+          <a href="/main/contacts">
+            <mat-icon>phone_iphone</mat-icon>
+            <span>Contacts</span>
+          </a>
+        </li>
+        <li class="sideItem">
+          <a href="/main/companies">
+            <mat-icon> pie_chart</mat-icon>
+            <span>Companies</span>
+          </a>
+        </li>
+        <li class="sideItem">
+          <a href="/main/leads">
+            <mat-icon>account_circle</mat-icon>
+            <span>Leads</span>
+          </a>
+        </li>
+        <li class="sideItem">
+          <a href="/main/deals">
+            <mat-icon>settings_input_antenna</mat-icon>
+            <span>Deals</span>
+          </a>
+        </li>
+        <li class="sideItem">
+          <a href="/main/projects">
+            <mat-icon>dashboard</mat-icon>
+            <span>Projects</span>
+          </a>
+        </li>
+        <li class="sideItem">
+          <a href="/main/reports">
+            <mat-icon> bar_chart</mat-icon>
+            <span>Reports</span>
+          </a>
+        </li>
+        <li class="sideItem">
+          <a href="/main/activities">
+            <mat-icon>calendar_today</mat-icon>
+            <span>Activities</span>
+          </a>
+        </li>
+        <li class="sideItem">
+          <a href="/main/mail">
+            <mat-icon> email</mat-icon>
+            <span>Email</span>
+          </a>
+        </li>
+        <li class="menu-title">
+          <span>Pages</span>
+        </li>
+        <li>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header class="{{active[1]}} sideItem" (click)="AddActive(1)">
+              <mat-panel-title class="sideItem">
+                <mat-icon>warning</mat-icon>
+                <span>Error Pages</span>
+                <mat-icon class="arrow" style="{{trans[1]}}">keyboard_arrow_right</mat-icon>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul>
+              <li class="sideItem">
+                <a href="/main/page404"><span>404 Error</span></a>
+              </li>
+              <li class="sideItem">
+                <a href="/main/page500"><span>505 Error</span></a>
+              </li>
+            </ul>
+          </mat-expansion-panel>
+        </li>
+        <li>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header class="{{active[2]}} sideItem" (click)="AddActive(2)">
+              <mat-panel-title class="sideItem">
+                <mat-icon> format_list_bulleted</mat-icon>
+                <span>Pages</span>
+                <mat-icon class="arrow" style="{{trans[2]}}">keyboard_arrow_right</mat-icon>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul>
+              <li class="sideItem">
+                <a href="/main/faq"><span>FAQ</span></a>
+              </li>
+              <li class="sideItem">
+                <a href="/main/terms"><span>Terms</span></a>
+              </li>
+              <li class="sideItem">
+                <a href="/main/privacy-policy"><span>Privacy Policy</span></a>
+              </li>
+              <li class="sideItem">
+                <a href="/main"><span>Blank Page</span></a>
+              </li>
+            </ul>
+
+          </mat-expansion-panel>
+        </li>
+        <li class="menu-title">UI Interface</li>
+        <li class="sideItem">
+          <a href="/main/components">
+            <mat-icon>view_compact</mat-icon>
+            <span>Components</span>
+          </a>
+        </li>
+        <li>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header class="{{active[3]}} sideItem" (click)="AddActive(3)">
+              <mat-panel-title>
+                <mat-icon>credit_card</mat-icon>
+                <span>Forms</span>
+                <mat-icon class="arrow" style="{{trans[3]}}">keyboard_arrow_right</mat-icon>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul>
+              <li class="sideItem">
+                <a href="/main/basic-inputs"><span>Basic Inputs</span> </a>
+              </li>
+              <li class="sideItem">
+                <a href="/main/form-input"><span>Input Groups</span> </a>
+              </li>
+              <li class="sideItem">
+                <a href="/main/horizontal-form"><span>Horizontal Form</span> </a>
+              </li>
+              <li class="sideItem">
+                <a href="/main/vertical-form"><span>Vertical Form</span> </a>
+              </li>
+              <li class="sideItem">
+                <a href="/main/form-validation"><span>Form Validation</span> </a>
+              </li>
+              <li class="sideItem">
+                <a href="/main/form-mask"><span>Form Mask</span> </a>
+              </li>
+            </ul>
+          </mat-expansion-panel>
+        </li>
+
+        <li class="sideItem submenu">
+          <a href="/main/basic-tables" class="subdrop">
+            <mat-icon>view_list</mat-icon>
+            <span>Tables</span>
+            <span class="menu-arrow"> </span>
+          </a>
+          <ul class="sub-menus" style="display: none;">
+            <li class="sideItem">
+              <a href="/main">Basic Tables</a>
+            </li>
+            <li class="sideItem">
+              <a href="/main">Data Table</a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-title"><span>Extras</span></li>
+        <li>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header class="{{active[4]}} sideItem" (click)="AddActive(4)">
+              <mat-panel-title>
+                <mat-icon>sort</mat-icon>
+                <span>Multi Level</span>
+                <mat-icon class="arrow" style="{{trans[4]}}">keyboard_arrow_right</mat-icon>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul>
+              <li>
+                <mat-expansion-panel hideToggle>
+                  <mat-expansion-panel-header class="{{active[5]}} sideItem" (click)="AddActive(5)">
+                    <mat-panel-title>
+                      <span>Level 1</span>
+                      <mat-icon class="arrow" style="{{trans[5]}}">keyboard_arrow_right</mat-icon>
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <ul>
+                    <li class="sideItem"><a href="/main"> <span class="font-15">Level 2</span></a></li>
+                    <li>
+                      <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel-header class="{{active[6]}} sideItem" (click)="AddActive(6)">
+                          <mat-panel-title>
+                            <span>Level 2</span>
+                            <mat-icon class="arrow" style="{{trans[6]}}">keyboard_arrow_right</mat-icon>
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <ul>
+                          <li class="sideItem"><a href="/main"> <span class="font-15">Level 3</span></a></li>
+                          <li class="sideItem"><a href="/main"> <span class="font-15">Level 3</span></a></li>
+                          <li class="sideItem"><a href="/main"> <span class="font-15">Level 3</span></a></li>
+                        </ul>
+                      </mat-expansion-panel>
+                    </li>
+                    <li class="sideItem"><a href="/main"> <span class="font-15">Level 2</span></a></li>
+                  </ul>
+                </mat-expansion-panel>
+              </li>
+              <li class="sideItem">
+                <a href="/main"> <span class="font-15">Level 1</span></a>
+              </li>
+            </ul>
+          </mat-expansion-panel>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="content" style="min-height: 100%;">
+    <router-outlet></router-outlet>
+  </div>
+</div>

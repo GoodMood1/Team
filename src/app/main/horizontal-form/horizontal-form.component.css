@@ -1,0 +1,67 @@
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: -3rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-.5 * var(--bs-gutter-x));
+  margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+.page-wrapper{
+  background-color: #f7f7f7;
+  padding-bottom: 30px;
+}
+
+.card{
+  margin-top: 30px;
+  box-shadow: black;
+}
+
+.card-header{
+  background: white;
+}
+
+.btn-primary{
+  background: #9a55ff;
+  margin-top: 30px;
+}
+
+.inputs-title
+{
+  margin: 0;
+  background: white;
+  padding: 10px;
+  height:56px;
+}
+.page-title
+{
+  font-family: 'Inter', sans-serif;
+  color: #1f1f1f;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.page-title > mat-icon
+{
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0px 3px 8.3px 0.7px rgb(153 93 255/35%);
+  background: linear-gradient(to right, #da8cff, #9a55ff);
+  color: white;
+}
+.inputs-title .breadcrumb
+{
+  padding-top: 8px;
+}
+.breadcrumb
+{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  float: right!important;
+  padding: 0;
+}

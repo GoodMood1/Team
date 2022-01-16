@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
+.inputs-title
+{
+  margin: 0;
+  background: white;
+  padding: 10px;
+  height:56px;
+}
+.text-end
+{
+  text-align: right!important;
+}
+.container {
+  width: 100%;
+  padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Inter', sans-serif;
+}
+.page-title > mat-icon
+{
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0px 3px 8.3px 0.7px rgb(153 93 255/35%);
+  background: linear-gradient(to right, #da8cff, #9a55ff);
+  color: white;
+}
+.card-header
+{
+  background: white;
+}
+.page-title
+{
+  font-family: 'Inter', sans-serif;
+  color: #1f1f1f;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.card-title
+{
+  font-size: 20px;
+  font-weight: 400;
+}
+.card-body
+{
+  background: white;
+}
+
+.inputs-title .breadcrumb
+{
+  padding-top: 8px;
+}
+.breadcrumb
+{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  float: right!important;
+  padding: 0;
+}
+.card-text
+{
+  font-size: 15px;
+}
+.card
+{
+  border: 1px solid #ededed;
+  box-shadow: 0 10px 30px 0 rgb(24 28 33/5%);
+  margin-bottom: 30px;
+}
+.form-group:first-child
+{
+  font-size: 15px;
+}
+
+.btn-primary
+{
+  background-color: #9a55ff;
+  border: 1px solid #9a55ff;
+}
+.right-border-none
+{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+.left-border-none
+{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-right: none;
+}
+.form-select
+ {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  -moz-padding-start: calc(0.75rem - 3px);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+ }
+
+.input-group span
+{
+  width: 40px;
+  text-align: center;
+}
+span mat-icon
+{
+  margin-left: -4px;
+}
+label
+{
+  font-size: 15px;
+  margin:0;
+}

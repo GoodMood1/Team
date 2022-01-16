@@ -1,0 +1,30 @@
+<div class="bumper">
+  <img
+    src="https://public-assets.envato-static.com/assets/logos/envato_white-b16fb3931ec959c6d77866bd37811108b66d2960fb6dc9c40b5124e683c9aa1a.svg"
+    width="130"/>
+</div>
+<div class="card">
+  <br>
+  <h2 align="center">Great to have you back!</h2>
+  <div class="card-body">
+    <form (submit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" [(ngModel)]="name" class="form-control"/>
+        <notifier-container></notifier-container>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" [(ngModel)]="password" class="form-control"/>
+        <notifier-container></notifier-container>
+      </div>
+      <div class="form-group" align="center">
+        <button [disabled]="loading" class="bcolor">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          <br> Sign in to your account
+        </button>
+        <p align="center">New here?<a href="/registration"> Create an Envato account</a></p>
+      </div>
+    </form>
+  </div>
+</div>

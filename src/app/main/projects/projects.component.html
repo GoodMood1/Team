@@ -1,0 +1,150 @@
+<div class="page-content container-fluid">
+  <div class="crms-title row bg-white">
+    <div class="col p-0">
+      <h3 class="page-title m-0">
+        <mat-icon style="color: blueviolet">subtitles</mat-icon>
+        <span> Projects</span>
+      </h3>
+    </div>
+    <div class="col p-0 text-right">
+      <ul class="breadcrumb bg-white float-right m-0 pl-0 pr-0">
+        <li class="breadcrumb-item"><a href="main/dashboard" style="color: blue">Dashboard</a></li>
+        <li class="breadcrumb-item" style="color: gray">Projects</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-header pt-3 mb-0">
+    <div class="row">
+      <div class="col">
+        <button mat-button [matMenuTriggerFor]="menu">All Projects
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <ul>
+            <li><a href="/main/projects">Recently viewed</a></li>
+            <li><a href="/main/projects">Item's i'm following</a></li>
+            <li><a href="/main/projects">All Projects</a></li>
+            <li><a href="/main/projects">Closed Projects</a></li>
+            <li><a href="/main/projects">All open Projects</a></li>
+          </ul>
+        </mat-menu>
+      </div>
+      <div class="col text-right">
+        <ul class="list-inline-item pl-0">
+          <li class="list-inline-item">
+            <button mat-button [matMenuTriggerFor]="viewmodule">
+              <mat-icon>view_module</mat-icon>
+            </button>
+            <mat-menu #viewmodule="matMenu">
+              <button mat-menu-item>Add New List View</button>
+            </mat-menu>
+          </li>
+          <li class="list-inline-item">
+            <button class="btn btn-gradient-primary font-weight-bold text-white">New Project</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="check">
+            <th mat-header-cell *matHeaderCellDef>
+              <mat-checkbox></mat-checkbox>
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <mat-checkbox></mat-checkbox>
+            </td>
+          </ng-container>
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name</th>
+            <td mat-cell *matCellDef="let element">   {{element.name}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="img">
+            <th mat-header-cell *matHeaderCellDef> Photo</th>
+            <td mat-cell *matCellDef="let element"><img src="{{element.img}}" alt=""></td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="phone">
+            <th mat-header-cell *matHeaderCellDef> Phone</th>
+            <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Sstatus</th>
+            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="user">
+            <th mat-header-cell *matHeaderCellDef> User</th>
+            <td mat-cell *matCellDef="let element">  {{element.user}}  </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef> Category</th>
+            <td mat-cell *matCellDef="let element">  {{element.category}}  </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="project">
+            <th mat-header-cell *matHeaderCellDef> Project</th>
+            <td mat-cell *matCellDef="let element">  {{element.project}}  </td>
+          </ng-container>
+          =
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="icon">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+              <mat-icon>{{element.icon}}</mat-icon>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions</th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <ul>
+                  <li><a href="/main/projects">Edit this Project</a></li>
+                  <li><a href="/main/projects">Change Project image</a></li>
+                  <li><a href="/main/projects">Delete this Project</a></li>
+                  <li><a href="/main/projects">Email this Project</a></li>
+                  <li><a href="/main/projects">Clone this Project</a></li>
+                  <li><a href="/main/projects">Change record owner</a></li>
+                  <li><a href="/main/projects">Generate merge document</a></li>
+                  <li><a href="/main/projects">Change Project contact</a></li>
+                  <li><a href="/main/projects">Print this Project</a></li>
+                  <li><a href="/main/projects">Convert this Project</a></li>
+                  <li><a href="/main/projects">Add new task for Project</a></li>
+                  <li><a href="/main/projects">Add new event for Project</a></li>
+                  <li><a href="/main/projects">Add new activity to Project</a></li>
+                </ul>
+              </mat-menu>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                       showFirstLastButtons
+                       aria-label="Select page of periodic elements">
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>

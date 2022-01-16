@@ -1,0 +1,116 @@
+<div class="page-content container-fluid">
+  <div class="crms-title row bg-white">
+    <div class="col p-0">
+      <h3 class="page-title m-0">
+        <mat-icon style="color: blueviolet">subtitles</mat-icon>
+        <span> Activities</span>
+      </h3>
+    </div>
+    <div class="col p-0 text-right">
+      <ul class="breadcrumb bg-white float-right m-0 pl-0 pr-0">
+        <li class="breadcrumb-item"><a href="main/dashboard" style="color: blue">Dashboard</a></li>
+        <li class="breadcrumb-item" style="color: gray">Activities</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-header pt-3 mb-0">
+    <div class="row">
+      <div class="col">
+        <button mat-button [matMenuTriggerFor]="menu">Propose Times
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <ul>
+            <li><a href="/main/activities">Recently viewed</a></li>
+            <li><a href="/main/activities">Item's i'm following</a></li>
+            <li><a href="/main/activities">All Activity</a></li>
+            <li><a href="/main/activities">All closed Activity</a></li>
+            <li><a href="/main/activities">All open Activity</a></li>
+            <li><a href="/main/activities">My Activity</a></li>
+          </ul>
+        </mat-menu>
+      </div>
+      <div class="col text-right">
+        <ul class="list-inline-item pl-0">
+          <li class="list-inline-item">
+            <button class="btn btn-gradient-primary font-weight-bold text-white">Add Activity</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="check">
+            <th mat-header-cell *matHeaderCellDef>
+              <mat-checkbox></mat-checkbox>
+            </th>
+            <td mat-cell *matCellDef="let element">
+              <mat-checkbox></mat-checkbox>
+            </td>
+          </ng-container>
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="subject">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Subject</th>
+            <td mat-cell *matCellDef="let element">   {{element.subject}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="company_deal">
+            <th mat-header-cell *matHeaderCellDef> Deal</th>
+            <td mat-cell *matCellDef="let element">{{element.company_deal}} </td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="contact">
+            <th mat-header-cell *matHeaderCellDef> Contact</th>
+            <td mat-cell *matCellDef="let element"> {{element.contact}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Email</th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="company">
+            <th mat-header-cell *matHeaderCellDef> Company</th>
+            <td mat-cell *matCellDef="let element"> {{element.company}} </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="phone">
+            <th mat-header-cell *matHeaderCellDef> Phone</th>
+            <td mat-cell *matCellDef="let element">  {{element.phone}}  </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions</th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <ul>
+                  <li><a href="/main/activities">Edit this Activity</a></li>
+                </ul>
+              </mat-menu>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                       showFirstLastButtons
+                       aria-label="Select page of periodic elements">
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>

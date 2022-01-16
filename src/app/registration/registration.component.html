@@ -1,0 +1,51 @@
+<div class="bumper">
+  <img
+    src="https://public-assets.envato-static.com/assets/logos/envato_white-b16fb3931ec959c6d77866bd37811108b66d2960fb6dc9c40b5124e683c9aa1a.svg"
+    width="130"/>
+</div>
+<div class="card" [style.display]="disp1">
+  <div align="center">
+    <br>
+    <span routerLink="../register">1.About you </span>
+    <span class="colp2"> 2.Your account</span>
+  </div>
+
+  <div align="center">
+    <h2>Hey {{f2}}, welcome!</h2>
+    <p class="colp">You can use this account to access all of Envato.</p>
+  </div>
+  <div class="d-flex justify-content-center align-items-center container">
+    <div class="row">
+      <div class="card-body">
+        <form (submit)="onSubmit()">
+          <div class="form-group">
+            <label for="username">Choose your username</label>
+            <input type="text" name="username" [(ngModel)]="name" class="form-control"/>
+          </div>
+          <p class="colp">Letters, numbers and underscores.</p>
+          <div class="form-group">
+            <label for="password">Choose your password</label>
+            <input type="text" name="password" [(ngModel)]="password" class="form-control"/>
+          </div>
+          <p class="colp">Use 8 or more characters with a mix of letters, numbers and symbols. Must not contain your
+            name or username</p>
+          <div class="form-group">
+            <label for="location">Your Location</label>
+            <select class="form-control" id="location" required>
+              <option *ngFor="let loc of locations" [value]="loc">{{loc}}</option>
+            </select>
+          </div>
+          <input class="btn btn-primary" type="checkbox"> Send me tips, trends, freebies, updates & offers. You can
+          unsubscribe at any time.
+          <div class="form-group" align="center">
+            <button [disabled]="loading" class="bcolor">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              <br> Create your Envato account
+            </button>
+            <p align="center">Already got an account?<a routerLink="../login">Sign in here</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
